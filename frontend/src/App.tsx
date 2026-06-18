@@ -10,6 +10,7 @@ import GeneratingJourney from './pages/GeneratingJourney';
 import YourItinerary from './pages/YourItinerary';
 import TripSummary from './pages/TripSummary';
 import BudgetBreakdown from './pages/BudgetBreakdown';
+import BudgetEmptyState from './pages/BudgetEmptyState';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/itinerary" element={<YourItinerary />} />
             <Route path="/summary" element={<TripSummary />} />
             <Route path="/budget" element={<BudgetBreakdown />} />
+            <Route path="/budget-empty" element={<BudgetEmptyState />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
