@@ -11,6 +11,7 @@ import YourItinerary from './pages/YourItinerary';
 import TripSummary from './pages/TripSummary';
 import BudgetBreakdown from './pages/BudgetBreakdown';
 import BudgetEmptyState from './pages/BudgetEmptyState';
+import SearchActive from './pages/SearchActive';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/summary" element={<TripSummary />} />
             <Route path="/budget" element={<BudgetBreakdown />} />
             <Route path="/budget-empty" element={<BudgetEmptyState />} />
+            <Route path="/search" element={<SearchActive />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
