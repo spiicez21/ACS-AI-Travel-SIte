@@ -197,7 +197,7 @@ const BudgetBreakdown: React.FC = () => {
       {/* Featured Experience Image (Editorial Touch) */}
       <section className="mt-section-gap">
         <div className="relative h-[400px] w-full rounded-xl overflow-hidden editorial-shadow group">
-          <div className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 bg-gray-200"></div>
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=2000" alt="Kyoto Destination" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
           <div className="absolute bottom-10 left-10 text-on-primary max-w-lg">
             <h3 className="font-headline-lg text-headline-lg mb-4">Your next destination: Kyoto</h3>

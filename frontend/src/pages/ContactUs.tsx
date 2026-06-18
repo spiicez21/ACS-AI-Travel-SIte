@@ -114,8 +114,8 @@ const ContactUs: React.FC = () => {
               </a>
             </div>
           </div>
-          <div className="relative rounded-xl overflow-hidden h-64 contact-shadow bg-gray-200">
-            <div className="w-full h-full object-cover"></div>
+          <div className="relative rounded-xl overflow-hidden h-64 contact-shadow">
+            <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80&w=1000" alt="Contact Us" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

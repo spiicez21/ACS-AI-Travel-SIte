@@ -6,7 +6,7 @@ const DestinationDetails: React.FC = () => {
     <main>
       {/* Hero Section */}
       <header className="relative h-[90vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gray-200"></div> {/* Placeholder for image */}
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=2000" alt="Kyoto Hero" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div className="absolute inset-0 flex flex-col justify-end px-margin-desktop pb-24 max-w-container-max mx-auto">
           <span className="font-label-sm text-label-sm text-on-primary uppercase tracking-[0.2em] mb-4">Honshu Island, Japan</span>
@@ -32,7 +32,7 @@ const DestinationDetails: React.FC = () => {
         </div>
         <div className="md:col-start-7 md:col-span-6">
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden editorial-shadow">
-            <div className="w-full h-full bg-gray-200 object-cover"></div>
+            <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&q=80&w=1000" alt="Kyoto Street" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -51,27 +51,27 @@ const DestinationDetails: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-gutter h-auto md:h-[800px]">
             <div className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl editorial-shadow">
-              <div className="absolute inset-0 bg-gray-300 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+              <img src="https://images.unsplash.com/photo-1473186505569-9c61870f119c?auto=format&fit=crop&q=80&w=1000" alt="Fushimi Inari" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-on-primary">
                 <h3 className="font-headline-md text-headline-md">Fushimi Inari-taisha</h3>
                 <p className="font-label-md text-label-md opacity-80 mt-2">The Path of Ten Thousand Gates</p>
               </div>
             </div>
             <div className="md:col-span-2 group relative overflow-hidden rounded-2xl editorial-shadow">
-              <div className="absolute inset-0 bg-gray-300 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+              <img src="https://images.unsplash.com/photo-1590457631379-3733ba40df83?auto=format&fit=crop&q=80&w=1000" alt="Kinkaku-ji" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-on-primary">
                 <h3 className="font-headline-md text-headline-md">Kinkaku-ji</h3>
                 <p className="font-label-md text-label-md opacity-80 mt-2">The Zen Golden Pavilion</p>
               </div>
             </div>
             <div className="group relative overflow-hidden rounded-2xl editorial-shadow">
-              <div className="absolute inset-0 bg-gray-300 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+              <img src="https://images.unsplash.com/photo-1478059299873-f0473614ee29?auto=format&fit=crop&q=80&w=1000" alt="Arashiyama" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 text-on-primary">
                 <h4 className="font-label-md text-label-md font-bold">Arashiyama</h4>
               </div>
             </div>
             <div className="group relative overflow-hidden rounded-2xl editorial-shadow">
-              <div className="absolute inset-0 bg-gray-300 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+              <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=1000" alt="Gion" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 text-on-primary">
                 <h4 className="font-label-md text-label-md font-bold">Gion District</h4>
               </div>

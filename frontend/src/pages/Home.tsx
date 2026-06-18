@@ -10,7 +10,7 @@ const Home: React.FC = () => {
           <img
             className="w-full h-full object-cover"
             alt="A cinematic wide shot of a luxury sailing yacht gliding through the turquoise waters of the Amalfi Coast"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlIp3rAZE4oEK2X6yd_Bjbhezj9mGy5HisMeHtR1Oh9AsqqlOQDZGRaP0LarzWflG_7sQ-5B9h1Vx3EhBQ_wuHTjOX-3VwkJkVtoaGxt6u-W3LEmBq7PsQvZ32EsCwSGazjy8OEx6436C1SjGt15gsbwl5jISn8b9Nw5pEyi4InhbDhVMW-kStU-xR9BhKpZvqb8u8fM-XK_o3VaKCbs5BvFPjUVveujcKUW2_JJ7xoTmQTuZAU9bbGtFnCT1aN0zsWwNAX6dIDFY" // Using a placeholder image to match the provided structure. Note: The provided HTML had long google user content URLs, which we keep or replace if needed.
+            src="https://images.unsplash.com/photo-1533095304620-cc41bc95fb12?auto=format&fit=crop&q=80&w=2000" // Unsplash image of a luxury yacht in the Amalfi coast
           />
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
           {/* Card 1 */}
           <Link to="/destination/kyoto" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <div className="absolute inset-0 bg-gray-200"></div> {/* Placeholder for Image */}
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000" alt="Kyoto, Japan" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Kyoto, Japan</h3>
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
           {/* Card 2 */}
           <Link to="/destination/venice" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <div className="absolute inset-0 bg-gray-200"></div>
+              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&q=80&w=1000" alt="Venice, Italy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Venice, Italy</h3>
             <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider">Floating Heritage</p>
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
           {/* Card 3 */}
           <Link to="/destination/agra" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <div className="absolute inset-0 bg-gray-200"></div>
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1000" alt="Agra, India" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Agra, India</h3>
             <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider">Architectural Poetry</p>
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
           {/* Card 4 */}
           <Link to="/destination/yosemite" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <div className="absolute inset-0 bg-gray-200"></div>
+              <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&q=80&w=1000" alt="Yosemite, USA" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Yosemite, USA</h3>
             <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider">Nature's Cathedral</p>

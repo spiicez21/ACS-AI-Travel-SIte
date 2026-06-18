@@ -30,8 +30,8 @@ const DatePickerActive: React.FC = () => {
               Our precision planning tools help you navigate the world's most exclusive destinations with editorial clarity and atmospheric calm.
             </p>
           </div>
-          <div className="relative h-[400px] rounded-[20px] overflow-hidden bg-gray-200">
-            <div className="w-full h-full object-cover"></div>
+          <div className="relative h-[400px] rounded-[20px] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&q=80&w=2000" alt="Chart Your Path" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

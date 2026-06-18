@@ -94,17 +94,17 @@ const PlanYourJourney: React.FC = () => {
               <label className="block font-label-md text-label-md text-primary uppercase tracking-widest">Core Narrative</label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { id: 'adventure', name: 'Adventure' },
-                  { id: 'relax', name: 'Relax' },
-                  { id: 'culture', name: 'Culture' },
-                  { id: 'food', name: 'Gastronomy' }
+                  { id: 'adventure', name: 'Adventure', img: 'https://images.unsplash.com/photo-1522199710521-72d69614c71c?auto=format&fit=crop&q=80&w=600' },
+                  { id: 'relax', name: 'Relax', img: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=600' },
+                  { id: 'culture', name: 'Culture', img: 'https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&q=80&w=600' },
+                  { id: 'food', name: 'Gastronomy', img: 'https://images.unsplash.com/photo-1414235077428-33898dd14582?auto=format&fit=crop&q=80&w=600' }
                 ].map((style) => (
                   <div
                     key={style.id}
                     onClick={() => toggleStyle(style.id)}
                     className={`style-card relative group cursor-pointer border-2 rounded-2xl overflow-hidden aspect-square flex items-center justify-center transition-all hover:scale-[1.02] ${selectedStyles.includes(style.id) ? 'border-primary' : 'border-transparent'}`}
                   >
-                    <div className="absolute inset-0 bg-gray-200 w-full h-full object-cover transition-all duration-500"></div>
+                    <img src={style.img} alt={style.name} className="absolute inset-0 w-full h-full object-cover transition-all duration-500" />
                     <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                       <p className="text-white font-label-md text-label-md text-center">{style.name}</p>

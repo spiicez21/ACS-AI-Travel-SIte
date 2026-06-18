@@ -39,7 +39,7 @@ const TripSummary: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           {/* Main Hero Image Card */}
           <div className="md:col-span-7 h-[600px] rounded-xl overflow-hidden relative editorial-shadow group">
-            <div className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 bg-gray-200"></div>
+            <img src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?auto=format&fit=crop&q=80&w=2000" alt="Lofoten Archipelago" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             <div className="absolute bottom-10 left-10 text-white">
               <span className="font-label-sm text-label-sm bg-white/20 backdrop-blur-md px-3 py-1 rounded-full mb-4 inline-block">Primary Destination</span>
@@ -144,7 +144,8 @@ const TripSummary: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Item 1 */}
             <div className="group cursor-pointer">
-              <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 editorial-shadow bg-gray-200">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 editorial-shadow relative">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=600" alt="Accommodations" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <p className="font-label-sm text-label-sm text-primary mb-2">Accommodations</p>
               <h4 className="font-headline-md text-headline-md mb-2">Mirror Glass Cabin</h4>
@@ -153,7 +154,8 @@ const TripSummary: React.FC = () => {
             
             {/* Item 2 */}
             <div className="group cursor-pointer">
-              <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 editorial-shadow bg-gray-200">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 editorial-shadow relative">
+                <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&q=80&w=600" alt="Aurora" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <p className="font-label-sm text-label-sm text-primary mb-2">Expedition</p>
               <h4 className="font-headline-md text-headline-md mb-2">Aurora Photography</h4>
@@ -162,7 +164,8 @@ const TripSummary: React.FC = () => {
 
             {/* Item 3 */}
             <div className="group cursor-pointer">
-              <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 editorial-shadow bg-gray-200">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 editorial-shadow relative">
+                <img src="https://images.unsplash.com/photo-1414235077428-33898dd14582?auto=format&fit=crop&q=80&w=600" alt="Gastronomy" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <p className="font-label-sm text-label-sm text-primary mb-2">Gastronomy</p>
               <h4 className="font-headline-md text-headline-md mb-2">Arctic Table Experience</h4>

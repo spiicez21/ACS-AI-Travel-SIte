@@ -46,7 +46,7 @@ const ExploreDestinations: React.FC = () => {
       <section className="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
           <div className="lg:col-span-2 relative group overflow-hidden rounded-[20px] aspect-[16/9] editorial-shadow">
-            <div className="absolute inset-0 bg-gray-200"></div> {/* Image placeholder */}
+            <img src="https://images.unsplash.com/photo-1516483638261-f40af5ebcf89?auto=format&fit=crop&q=80&w=1000" alt="Positano, Italy" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-10 text-white">
               <div className="mb-4 inline-block px-3 py-1 rounded-full bg-primary/30 backdrop-blur-md border border-white/20 font-label-sm text-label-sm uppercase tracking-widest">Trending Now</div>
@@ -86,18 +86,18 @@ const ExploreDestinations: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
           {[
-            { name: "Agra", price: "$$$", tags: "India · Architecture", experiences: 8 },
-            { name: "London", price: "$$$$", tags: "UK · Metropolitan", experiences: 15 },
-            { name: "Vik", price: "$$", tags: "Iceland · Adventure", experiences: 5 },
-            { name: "Oia", price: "$$$$", tags: "Greece · Serenity", experiences: 12 },
-            { name: "Ubud", price: "$$", tags: "Bali · Wellness", experiences: 22 },
-            { name: "Kyoto", price: "$$$", tags: "Japan · Tradition", experiences: 18 },
-            { name: "Paris", price: "$$$$", tags: "France · Elegance", experiences: 30 },
-            { name: "Zermatt", price: "$$$$$", tags: "Switzerland · Alpine", experiences: 10 }
+            { name: "Agra", price: "$$$", tags: "India · Architecture", experiences: 8, img: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1000" },
+            { name: "London", price: "$$$$", tags: "UK · Metropolitan", experiences: 15, img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" },
+            { name: "Vik", price: "$$", tags: "Iceland · Adventure", experiences: 5, img: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&q=80&w=1000" },
+            { name: "Oia", price: "$$$$", tags: "Greece · Serenity", experiences: 12, img: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5f1?auto=format&fit=crop&q=80&w=1000" },
+            { name: "Ubud", price: "$$", tags: "Bali · Wellness", experiences: 22, img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1000" },
+            { name: "Kyoto", price: "$$$", tags: "Japan · Tradition", experiences: 18, img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000" },
+            { name: "Paris", price: "$$$$", tags: "France · Elegance", experiences: 30, img: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1000" },
+            { name: "Zermatt", price: "$$$$$", tags: "Switzerland · Alpine", experiences: 10, img: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80&w=1000" }
           ].map((dest) => (
             <Link to={`/destination/${dest.name.toLowerCase()}`} key={dest.name} className="group relative flex flex-col bg-white rounded-[20px] overflow-hidden editorial-shadow transition-all duration-300 hover:-translate-y-2">
-              <div className="aspect-[4/5] overflow-hidden">
-                <div className="absolute inset-0 bg-gray-200 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+              <div className="aspect-[4/5] overflow-hidden relative">
+                <img src={dest.img} alt={dest.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

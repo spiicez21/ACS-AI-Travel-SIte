@@ -36,7 +36,7 @@ const SearchActive: React.FC = () => {
             </div>
           </div>
           <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden relative bg-gray-200">
-            {/* Background image placeholder */}
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=2000" alt="Spring Anthology" className="absolute inset-0 w-full h-full object-cover" />
           </div>
         </div>
 
@@ -64,21 +64,24 @@ const SearchActive: React.FC = () => {
                 <div className="grid grid-cols-3 gap-4">
                   {/* Kyoto */}
                   <div className="group cursor-pointer editorial-image-hover">
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=600" alt="Kyoto" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Kyoto</h4>
                     <p className="font-label-sm text-label-sm text-outline">Japan</p>
                   </div>
                   {/* Amalfi */}
                   <div className="group cursor-pointer editorial-image-hover">
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                      <img src="https://images.unsplash.com/photo-1516483638261-f40af5ebcf89?auto=format&fit=crop&q=80&w=600" alt="Amalfi Coast" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Amalfi Coast</h4>
                     <p className="font-label-sm text-label-sm text-outline">Italy</p>
                   </div>
                   {/* Lofoten */}
                   <div className="group cursor-pointer editorial-image-hover">
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                      <img src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?auto=format&fit=crop&q=80&w=600" alt="Lofoten" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Lofoten</h4>
                     <p className="font-label-sm text-label-sm text-outline">Norway</p>

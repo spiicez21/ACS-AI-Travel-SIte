@@ -86,7 +86,7 @@ const YourItinerary: React.FC = () => {
 
             {/* Map Preview Component */}
             <div className="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow border border-outline-variant/30 aspect-square relative group">
-              <div className="absolute inset-0 bg-gray-200"></div>
+              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600" alt="Map Preview" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
               <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg flex justify-between items-center">
                 <span className="font-label-md text-label-md">Route Preview</span>
@@ -109,7 +109,8 @@ const YourItinerary: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {/* Activity Card */}
               <div className="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow group hover:-translate-y-1 transition-transform">
-                <div className="aspect-video relative overflow-hidden bg-gray-200">
+                <div className="aspect-video relative overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1542051812871-7575008220f8?auto=format&fit=crop&q=80&w=600" alt="Aman Kyoto" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm z-10">14:00</div>
                 </div>
                 <div className="p-6">
@@ -124,7 +125,8 @@ const YourItinerary: React.FC = () => {
 
               {/* Activity Card */}
               <div className="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow group hover:-translate-y-1 transition-transform">
-                <div className="aspect-video relative overflow-hidden bg-gray-200">
+                <div className="aspect-video relative overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1545315001-fea9d9241b80?auto=format&fit=crop&q=80&w=600" alt="Zen Meditation" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm z-10">17:00</div>
                 </div>
                 <div className="p-6">
@@ -161,7 +163,9 @@ const YourItinerary: React.FC = () => {
             </header>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="space-y-4">
-                <div className="aspect-square rounded-xl overflow-hidden shadow-sm bg-gray-200"></div>
+                <div className="aspect-square rounded-xl overflow-hidden shadow-sm relative">
+                  <img src="https://images.unsplash.com/photo-1558862423-f932840c61c3?auto=format&fit=crop&q=80&w=600" alt="Kawai Kanjiro House" className="absolute inset-0 w-full h-full object-cover" />
+                </div>
                 <div>
                   <span className="font-label-sm text-label-sm text-secondary">09:30</span>
                   <h4 className="font-label-md text-label-md font-bold mt-1">Kawai Kanjiro House</h4>
@@ -169,7 +173,9 @@ const YourItinerary: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="aspect-square rounded-xl overflow-hidden shadow-sm bg-gray-200"></div>
+                <div className="aspect-square rounded-xl overflow-hidden shadow-sm relative">
+                  <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=600" alt="Ginkaku-ji Gardens" className="absolute inset-0 w-full h-full object-cover" />
+                </div>
                 <div>
                   <span className="font-label-sm text-label-sm text-secondary">11:30</span>
                   <h4 className="font-label-md text-label-md font-bold mt-1">Ginkaku-ji Gardens</h4>
@@ -177,7 +183,9 @@ const YourItinerary: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="aspect-square rounded-xl overflow-hidden shadow-sm bg-gray-200"></div>
+                <div className="aspect-square rounded-xl overflow-hidden shadow-sm relative">
+                  <img src="https://images.unsplash.com/photo-1580828369019-2220f188abcb?auto=format&fit=crop&q=80&w=600" alt="Shunko-in Lunch" className="absolute inset-0 w-full h-full object-cover" />
+                </div>
                 <div>
                   <span className="font-label-sm text-label-sm text-secondary">13:30</span>
                   <h4 className="font-label-md text-label-md font-bold mt-1">Shunko-in Lunch</h4>
@@ -208,7 +216,8 @@ const YourItinerary: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="rounded-xl overflow-hidden editorial-shadow h-80 bg-gray-200">
+              <div className="rounded-xl overflow-hidden editorial-shadow h-80 relative">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000" alt="The Ritz-Carlton, Kyoto" className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
           </section>
