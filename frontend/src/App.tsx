@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import ExploreDestinations from './pages/ExploreDestinations';
+import DestinationDetails from './pages/DestinationDetails';
+import PlanYourJourney from './pages/PlanYourJourney';
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/destinations" element={<ExploreDestinations />} />
+            <Route path="/destination/:id" element={<DestinationDetails />} />
+            <Route path="/plan" element={<PlanYourJourney />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
