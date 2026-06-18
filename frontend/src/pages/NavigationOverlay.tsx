@@ -34,12 +34,6 @@ const NavigationOverlay: React.FC = () => {
     setActiveBg(bg);
   };
 
-  const handleMouseLeave = () => {
-    // We let the container handle resetting if we leave the nav entirely, 
-    // or just keep the last hovered one. The original logic kept the last 
-    // or reset on container leave. Let's do reset on nav container leave.
-  };
-
   const isDarkBg = activeBg !== 'default';
 
   return (
