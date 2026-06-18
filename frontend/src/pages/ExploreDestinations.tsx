@@ -25,7 +25,7 @@ const ExploreDestinations: React.FC = () => {
               type="text"
             />
           </div>
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 w-full md:w-auto">
+          <div className="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-3 pt-1 w-full md:w-auto">
             <div className="flex items-center gap-2">
               <button className="whitespace-nowrap px-4 py-2 rounded-full border border-primary bg-primary-fixed text-primary font-label-md text-label-md">All Regions</button>
               <button className="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md text-on-surface-variant">Europe</button>
