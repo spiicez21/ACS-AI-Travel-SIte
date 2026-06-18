@@ -13,6 +13,7 @@ import BudgetBreakdown from './pages/BudgetBreakdown';
 import BudgetEmptyState from './pages/BudgetEmptyState';
 import SearchActive from './pages/SearchActive';
 import NavigationOverlay from './pages/NavigationOverlay';
+import DatePickerActive from './pages/DatePickerActive';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/budget-empty" element={<BudgetEmptyState />} />
             <Route path="/search" element={<SearchActive />} />
             <Route path="/navigation" element={<NavigationOverlay />} />
+            <Route path="/date-picker" element={<DatePickerActive />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
