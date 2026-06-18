@@ -73,7 +73,7 @@ const SearchActive: React.FC = () => {
                   {/* Amalfi */}
                   <div className="group cursor-pointer editorial-image-hover">
                     <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
-                      <img src="https://images.unsplash.com/photo-1516483638261-f40af5ebcf89?auto=format&fit=crop&q=80&w=600" alt="Amalfi Coast" className="absolute inset-0 w-full h-full object-cover" />
+                      <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&q=80&w=600" alt="Amalfi Coast" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Amalfi Coast</h4>
                     <p className="font-label-sm text-label-sm text-outline">Italy</p>

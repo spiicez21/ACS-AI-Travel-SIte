@@ -7,10 +7,13 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <video
             className="w-full h-full object-cover"
-            alt="A cinematic wide shot of a luxury sailing yacht gliding through the turquoise waters of the Amalfi Coast"
-            src="https://images.unsplash.com/photo-1516483638261-f40af5ebcf89?auto=format&fit=crop&q=80&w=2000" // Unsplash image of Amalfi coast
+            src="/Assets/Hero/background.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
           <div className="absolute inset-0 hero-gradient"></div>
         </div>

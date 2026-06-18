@@ -46,7 +46,7 @@ const ExploreDestinations: React.FC = () => {
       <section className="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
           <div className="lg:col-span-2 relative group overflow-hidden rounded-[20px] aspect-[16/9] editorial-shadow">
-            <img src="https://images.unsplash.com/photo-1516483638261-f40af5ebcf89?auto=format&fit=crop&q=80&w=1000" alt="Positano, Italy" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&q=80&w=1000" alt="Positano, Italy" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-10 text-white">
               <div className="mb-4 inline-block px-3 py-1 rounded-full bg-primary/30 backdrop-blur-md border border-white/20 font-label-sm text-label-sm uppercase tracking-widest">Trending Now</div>
@@ -106,9 +106,9 @@ const ExploreDestinations: React.FC = () => {
                 </div>
                 <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-4">{dest.tags}</p>
                 <div className="h-[1px] w-full bg-outline-variant mb-4"></div>
-                <div className="flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="font-label-md text-label-md text-on-surface">{dest.experiences} Experiences</span>
-                  <span className="material-symbols-outlined text-primary">add_circle</span>
+                <div className="flex items-center justify-between transition-colors duration-300">
+                  <span className="font-label-md text-label-md text-outline group-hover:text-on-surface transition-colors">{dest.experiences} Experiences</span>
+                  <span className="material-symbols-outlined text-outline group-hover:text-primary transition-colors">add_circle</span>
                 </div>
               </div>
             </Link>
@@ -118,7 +118,7 @@ const ExploreDestinations: React.FC = () => {
 
       {/* CTA Section */}
       <section className="mt-section-gap px-margin-desktop max-w-container-max mx-auto">
-        <div className="premium-gradient rounded-[32px] p-16 md:p-24 text-center text-on-primary editorial-shadow relative overflow-hidden">
+        <div className="cta-gradient rounded-[32px] p-16 md:p-24 text-center text-on-primary editorial-shadow relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-[100px]"></div>
             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white rounded-full blur-[100px]"></div>
