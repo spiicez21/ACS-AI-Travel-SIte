@@ -8,6 +8,7 @@ import DestinationDetails from './pages/DestinationDetails';
 import PlanYourJourney from './pages/PlanYourJourney';
 import GeneratingJourney from './pages/GeneratingJourney';
 import YourItinerary from './pages/YourItinerary';
+import TripSummary from './pages/TripSummary';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/plan" element={<PlanYourJourney />} />
             <Route path="/generating" element={<GeneratingJourney />} />
             <Route path="/itinerary" element={<YourItinerary />} />
+            <Route path="/summary" element={<TripSummary />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
