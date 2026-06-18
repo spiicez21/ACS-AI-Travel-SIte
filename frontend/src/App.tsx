@@ -12,6 +12,7 @@ import TripSummary from './pages/TripSummary';
 import BudgetBreakdown from './pages/BudgetBreakdown';
 import BudgetEmptyState from './pages/BudgetEmptyState';
 import SearchActive from './pages/SearchActive';
+import NavigationOverlay from './pages/NavigationOverlay';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/budget" element={<BudgetBreakdown />} />
             <Route path="/budget-empty" element={<BudgetEmptyState />} />
             <Route path="/search" element={<SearchActive />} />
+            <Route path="/navigation" element={<NavigationOverlay />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
