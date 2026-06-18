@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavigationOverlay: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,33 +75,33 @@ const NavigationOverlay: React.FC = () => {
           <nav className="flex flex-col space-y-4 md:space-y-6" onMouseLeave={() => setActiveBg('default')}>
             {/* Nav Items */}
             <div className="group/nav nav-item-hover relative" onMouseEnter={() => handleMouseEnter('destinations')}>
-              <a className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'destinations' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">
+              <Link className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'destinations' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} to="/destinations">
                 Destinations
-              </a>
+              </Link>
               <div className={`nav-line h-1 absolute bottom-0 left-0 ${isDarkBg ? 'bg-white' : 'bg-primary'}`}></div>
             </div>
             <div className="group/nav nav-item-hover relative" onMouseEnter={() => handleMouseEnter('planner')}>
-              <a className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'planner' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">
+              <Link className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'planner' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} to="/plan">
                 Planner
-              </a>
+              </Link>
               <div className={`nav-line h-1 absolute bottom-0 left-0 ${isDarkBg ? 'bg-white' : 'bg-primary'}`}></div>
             </div>
             <div className="group/nav nav-item-hover relative" onMouseEnter={() => handleMouseEnter('experiences')}>
-              <a className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'experiences' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">
+              <Link className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'experiences' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} to="/itinerary">
                 Experiences
-              </a>
+              </Link>
               <div className={`nav-line h-1 absolute bottom-0 left-0 ${isDarkBg ? 'bg-white' : 'bg-primary'}`}></div>
             </div>
             <div className="group/nav nav-item-hover relative" onMouseEnter={() => handleMouseEnter('about')}>
-              <a className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'about' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">
+              <Link className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'about' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} to="/contact">
                 About
-              </a>
+              </Link>
               <div className={`nav-line h-1 absolute bottom-0 left-0 ${isDarkBg ? 'bg-white' : 'bg-primary'}`}></div>
             </div>
             <div className="group/nav nav-item-hover relative" onMouseEnter={() => handleMouseEnter('journal')}>
-              <a className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'journal' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">
+              <Link className={`inline-block font-display-xl text-headline-lg-mobile md:text-display-xl transition-transform duration-500 ${activeBg === 'journal' ? 'translate-x-6' : 'hover:translate-x-4'} ${isDarkBg ? 'text-white' : 'text-primary'}`} to="/summary">
                 Journal
-              </a>
+              </Link>
               <div className={`nav-line h-1 absolute bottom-0 left-0 ${isDarkBg ? 'bg-white' : 'bg-primary'}`}></div>
             </div>
           </nav>

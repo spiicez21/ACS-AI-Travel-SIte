@@ -25,17 +25,17 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/planner">
+              <Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/plan">
                 Planner
               </Link>
             </li>
             <li>
-              <Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/experiences">
+              <Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/itinerary">
                 Experiences
               </Link>
             </li>
             <li>
-              <Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/about">
+              <Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/contact">
                 About
               </Link>
             </li>

@@ -10,7 +10,7 @@ const Home: React.FC = () => {
           <img
             className="w-full h-full object-cover"
             alt="A cinematic wide shot of a luxury sailing yacht gliding through the turquoise waters of the Amalfi Coast"
-            src="https://images.unsplash.com/photo-1533095304620-cc41bc95fb12?auto=format&fit=crop&q=80&w=2000" // Unsplash image of a luxury yacht in the Amalfi coast
+            src="https://images.unsplash.com/photo-1516483638261-f40af5ebcf89?auto=format&fit=crop&q=80&w=2000" // Unsplash image of Amalfi coast
           />
           <div className="absolute inset-0 hero-gradient"></div>
         </div>

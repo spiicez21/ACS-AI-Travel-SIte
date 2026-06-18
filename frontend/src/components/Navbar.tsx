@@ -43,28 +43,30 @@ const Navbar: React.FC = () => {
           </Link>
           <Link
             className="text-on-surface hover:text-primary transition-colors duration-300 font-label-md text-label-md active:opacity-80 active:scale-95"
-            to="/planner"
+            to="/plan"
           >
             Planner
           </Link>
           <Link
             className="text-on-surface hover:text-primary transition-colors duration-300 font-label-md text-label-md active:opacity-80 active:scale-95"
-            to="/experiences"
+            to="/itinerary"
           >
             Experiences
           </Link>
           <Link
             className="text-on-surface hover:text-primary transition-colors duration-300 font-label-md text-label-md active:opacity-80 active:scale-95"
-            to="/about"
+            to="/contact"
           >
             About
           </Link>
         </div>
 
         <div className="flex items-center gap-4 bg-surface/80 backdrop-blur-md px-6 py-2 rounded-full border border-outline-variant shadow-sm pointer-events-auto">
-          <button className="material-symbols-outlined text-primary text-xl">
-            search
-          </button>
+          <Link to="/search" className="flex items-center justify-center">
+            <button className="material-symbols-outlined text-primary text-xl">
+              search
+            </button>
+          </Link>
           <Link to="/plan">
             <button className="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-95 shadow-sm">
               Plan Your Trip
