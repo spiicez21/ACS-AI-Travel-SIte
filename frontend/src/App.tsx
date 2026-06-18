@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ExploreDestinations from './pages/ExploreDestinations';
 import DestinationDetails from './pages/DestinationDetails';
 import PlanYourJourney from './pages/PlanYourJourney';
+import GeneratingJourney from './pages/GeneratingJourney';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/destinations" element={<ExploreDestinations />} />
             <Route path="/destination/:id" element={<DestinationDetails />} />
             <Route path="/plan" element={<PlanYourJourney />} />
+            <Route path="/generating" element={<GeneratingJourney />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
