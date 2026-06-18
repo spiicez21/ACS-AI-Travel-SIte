@@ -9,6 +9,7 @@ import PlanYourJourney from './pages/PlanYourJourney';
 import GeneratingJourney from './pages/GeneratingJourney';
 import YourItinerary from './pages/YourItinerary';
 import TripSummary from './pages/TripSummary';
+import BudgetBreakdown from './pages/BudgetBreakdown';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/generating" element={<GeneratingJourney />} />
             <Route path="/itinerary" element={<YourItinerary />} />
             <Route path="/summary" element={<TripSummary />} />
+            <Route path="/budget" element={<BudgetBreakdown />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
