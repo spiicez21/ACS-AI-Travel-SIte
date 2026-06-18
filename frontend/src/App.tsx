@@ -14,6 +14,7 @@ import BudgetEmptyState from './pages/BudgetEmptyState';
 import SearchActive from './pages/SearchActive';
 import NavigationOverlay from './pages/NavigationOverlay';
 import DatePickerActive from './pages/DatePickerActive';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/search" element={<SearchActive />} />
             <Route path="/navigation" element={<NavigationOverlay />} />
             <Route path="/date-picker" element={<DatePickerActive />} />
+            <Route path="/contact" element={<ContactUs />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>
