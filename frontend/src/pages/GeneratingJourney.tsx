@@ -69,20 +69,6 @@ const GeneratingJourney: React.FC = () => {
 
   return (
     <main className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-surface">
-      {/* Top Progress Shell */}
-      <div className="fixed top-0 w-full z-50 pt-12 px-margin-desktop max-w-container-max mx-auto left-1/2 -translate-x-1/2">
-        <div className="flex justify-between items-center mb-6">
-          <span className="font-display-lg text-headline-md font-bold tracking-tighter text-primary">THISAI</span>
-          <div className="flex items-center gap-4">
-            <span className="font-label-md text-label-md text-on-surface-variant transition-opacity duration-500">
-              {statusText}
-            </span>
-            <div className="w-48 h-[2px] bg-outline-variant rounded-full overflow-hidden">
-              <div className="h-full bg-primary progress-line-animation"></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Skeleton Layout Canvas (Asymmetric Editorial Style) */}
       <div className="w-full max-w-container-max px-margin-desktop grid grid-cols-12 gap-gutter relative z-10 pt-20">

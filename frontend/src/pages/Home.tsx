@@ -30,8 +30,8 @@ const Home: React.FC = () => {
                 type="text"
               />
             </div>
-            <Link to="/search">
-              <button className="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-95 transition-all w-full md:w-auto">
+            <Link to="/search" className="flex items-stretch">
+              <button className="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-95 transition-all w-full md:w-auto h-full">
                 <span>Ask AI Guide</span>
                 <span className="material-symbols-outlined text-sm">auto_awesome</span>
               </button>

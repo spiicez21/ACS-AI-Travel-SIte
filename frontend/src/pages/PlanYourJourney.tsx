@@ -94,10 +94,10 @@ const PlanYourJourney: React.FC = () => {
               <label className="block font-label-md text-label-md text-primary uppercase tracking-widest">Core Narrative</label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { id: 'adventure', name: 'Adventure', img: 'https://images.unsplash.com/photo-1522199710521-72d69614c71c?auto=format&fit=crop&q=80&w=600' },
+                  { id: 'adventure', name: 'Adventure', img: 'https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&q=80&w=600' },
                   { id: 'relax', name: 'Relax', img: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=600' },
                   { id: 'culture', name: 'Culture', img: 'https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&q=80&w=600' },
-                  { id: 'food', name: 'Gastronomy', img: 'https://images.unsplash.com/photo-1414235077428-33898dd14582?auto=format&fit=crop&q=80&w=600' }
+                  { id: 'food', name: 'Gastronomy', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600' }
                 ].map((style) => (
                   <div
                     key={style.id}
