@@ -1,16 +1,12 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { useLocation } from 'react-router-dom';
 
-const BudgetBreakdown: React.FC = () => {
-  const location = useLocation();
-  const aiData = location.state?.itineraryData;
-
+const Budget: React.FC = () => {
   const chartData = [
-    { name: 'Flights', value: 45, color: '#0b10a4' }, 
-    { name: 'Hotels', value: 30, color: '#1d4ed8' }, 
-    { name: 'Activities', value: 15, color: '#94a3b8' }, 
-    { name: 'Food', value: 10, color: '#cbd5e1' }, 
+    { name: 'Flights', value: 45, color: '#0b10a4' }, // Primary dark blue
+    { name: 'Hotels', value: 30, color: '#1d4ed8' }, // Lighter blue
+    { name: 'Activities', value: 15, color: '#94a3b8' }, // Slate
+    { name: 'Food', value: 10, color: '#cbd5e1' }, // Light slate
   ];
 
   return (
@@ -20,18 +16,14 @@ const BudgetBreakdown: React.FC = () => {
         <span className="font-label-sm text-xs font-bold text-[#0b10a4] uppercase tracking-widest mb-4 block">CURRENT ITINERARY</span>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
-            <h1 className="font-display-xl text-display-xl md:text-7xl text-on-surface mb-4 capitalize">
-              {aiData ? aiData.destination : 'Tokyo & Kyoto'}
-            </h1>
+            <h1 className="font-display-xl text-display-xl md:text-7xl text-on-surface mb-4">Tokyo & Kyoto</h1>
             <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
-              A {aiData ? aiData.duration : '12'}-day curated journey. Budget updated 2 minutes ago.
+              A 12-day curated journey through Japan's imperial history and neon futures. Budget updated 2 minutes ago.
             </p>
           </div>
           <div className="text-right">
             <span className="font-label-sm text-xs text-outline font-medium block mb-1">Total Estimated Budget</span>
-            <span className="font-display-lg text-headline-lg md:text-5xl text-[#0b10a4] font-semibold">
-              {aiData ? aiData.budget : '$8,420.00'}
-            </span>
+            <span className="font-display-lg text-headline-lg md:text-5xl text-[#0b10a4] font-semibold">$8,420.00</span>
           </div>
         </div>
       </div>
@@ -98,7 +90,7 @@ const BudgetBreakdown: React.FC = () => {
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-white/70 mt-0.5">calendar_today</span>
                 <p className="font-body-sm text-sm leading-relaxed text-white/90">
-                  Moving the stay to Tuesday-Thursday reduces the rate by 18%.
+                  Moving the Park Hyatt stay to Tuesday-Thursday reduces the rate by 18%.
                 </p>
               </div>
             </div>
@@ -197,18 +189,16 @@ const BudgetBreakdown: React.FC = () => {
       <div className="relative rounded-3xl overflow-hidden aspect-[3/1] md:aspect-[4/1] flex items-center shadow-2xl">
         <img 
           src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=2000" 
-          alt="Destination" 
+          alt="Kyoto Temple" 
           className="absolute inset-0 w-full h-full object-cover" 
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b10a4]/90 to-transparent"></div>
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <h2 className="font-display-lg text-4xl md:text-5xl text-white mb-4">
-            Your next destination: <span className="capitalize">{aiData ? aiData.destination : 'Kyoto'}</span>
-          </h2>
+          <h2 className="font-display-lg text-4xl md:text-5xl text-white mb-4">Your next destination: Kyoto</h2>
           <p className="font-body-md text-white/90 mb-8 max-w-lg">
-            Discover the hidden gems. Our AI has already optimized your transport routes between these landmarks.
+            Discover the hidden temples of Higashiyama. Our AI has already optimized your transport routes between these landmarks.
           </p>
-          <button className="bg-white text-[#0b10a4] px-6 py-3 rounded-full font-label-md text-sm hover:scale-105 transition-transform font-bold">
+          <button className="bg-white text-[#0b10a4] px-6 py-3 rounded-full font-label-md text-sm hover:scale-105 transition-transform">
             View Detailed Route
           </button>
         </div>
@@ -217,4 +207,4 @@ const BudgetBreakdown: React.FC = () => {
   );
 };
 
-export default BudgetBreakdown;
+export default Budget;

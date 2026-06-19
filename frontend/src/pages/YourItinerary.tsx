@@ -76,6 +76,12 @@ const YourItinerary: React.FC = () => {
                     </div>
                     <span className="font-label-md text-label-md">On Track</span>
                   </div>
+                  <button 
+                    onClick={() => window.location.href = '/budget'}
+                    className="mt-4 w-full border border-[#0b10a4] text-[#0b10a4] rounded-lg py-2 font-label-sm text-sm hover:bg-[#0b10a4] hover:text-white transition-colors"
+                  >
+                    View Budget Breakdown
+                  </button>
                 </div>
                 <div className="pt-6 border-t border-outline-variant/30">
                   <div className="flex items-center justify-between mb-4">
