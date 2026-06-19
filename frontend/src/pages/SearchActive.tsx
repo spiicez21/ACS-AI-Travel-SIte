@@ -40,9 +40,9 @@ const SearchActive: React.FC = () => {
           </div>
         </div>
 
-        {/* THE SEARCH DROPDOWN STATE */}
-        <div className="absolute top-[-24px] right-margin-desktop z-[60] w-[640px]">
-          <div className="premium-blur search-dropdown-shadow rounded-2xl overflow-hidden border border-outline-variant/30 animate-in fade-in slide-in-from-top-4 duration-500">
+        {/* THE SEARCH STATE */}
+        <div className="w-full mb-32 relative z-[60]">
+          <div className="bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[24px] overflow-hidden border border-outline-variant/20 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Search Header */}
             <div className="p-8 border-b border-outline-variant/20 flex items-center gap-4">
               <span className="material-symbols-outlined text-primary text-3xl">search</span>
@@ -64,24 +64,24 @@ const SearchActive: React.FC = () => {
                 <div className="grid grid-cols-3 gap-4">
                   {/* Kyoto */}
                   <div className="group cursor-pointer editorial-image-hover">
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
-                      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=600" alt="Kyoto" className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4 relative">
+                      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" alt="Kyoto" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Kyoto</h4>
                     <p className="font-label-sm text-label-sm text-outline">Japan</p>
                   </div>
                   {/* Amalfi */}
                   <div className="group cursor-pointer editorial-image-hover">
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
-                      <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&q=80&w=600" alt="Amalfi Coast" className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4 relative">
+                      <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&q=80&w=800" alt="Amalfi Coast" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Amalfi Coast</h4>
                     <p className="font-label-sm text-label-sm text-outline">Italy</p>
                   </div>
                   {/* Lofoten */}
                   <div className="group cursor-pointer editorial-image-hover">
-                    <div className="aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
-                      <img src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?auto=format&fit=crop&q=80&w=600" alt="Lofoten" className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4 relative">
+                      <img src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?auto=format&fit=crop&q=80&w=800" alt="Lofoten" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <h4 className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Lofoten</h4>
                     <p className="font-label-sm text-label-sm text-outline">Norway</p>
