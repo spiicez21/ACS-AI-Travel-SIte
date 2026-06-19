@@ -18,7 +18,7 @@ const Home: React.FC = () => {
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
         <div className="relative z-10 text-center px-margin-mobile md:px-0 max-w-4xl">
-          <h1 className="font-display-xl text-display-xl text-white mb-8 drop-shadow-lg">
+          <h1 className="font-display-xl text-display-xl text-white mb-8 drop-shadow-[1px_4px_8px_rgba(0,0,0,1)]   ">
             Find Your Direction
           </h1>
           <div className="bg-white/95 backdrop-blur-sm p-2 rounded-2xl editorial-shadow flex flex-col md:flex-row gap-2 max-w-2xl mx-auto">
