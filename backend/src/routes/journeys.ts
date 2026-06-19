@@ -6,19 +6,22 @@ const router = Router();
 
 router.post('/generate', async (req, res) => {
   try {
-    const { destination, duration, budget, companions } = req.body;
+    const { destination, duration, budget, styles } = req.body;
 
-    if (!destination || !duration || !budget || !companions) {
+    if (!destination || !duration || !budget) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
+    // Convert styles array to string, fallback if missing
+    const travelStyles = styles ? styles.join(', ') : 'General Explorer';
+
     // 1. Generate itinerary using Cohere
-    const itinerary = await generateItinerary(destination, duration, budget, companions);
+    const itinerary = await generateItinerary(destination, duration, budget.toString(), travelStyles);
 
     // 2. Save to Neon database
     const result = await sql`
       INSERT INTO journeys (destination, duration, budget, companions, itinerary_json)
-      VALUES (${destination}, ${duration}, ${budget}, ${companions}, ${JSON.stringify(itinerary)})
+      VALUES (${destination}, ${duration}, ${budget}, ${travelStyles}, ${JSON.stringify(itinerary)})
       RETURNING id
     `;
 
@@ -30,7 +33,7 @@ router.post('/generate', async (req, res) => {
       destination,
       duration,
       budget,
-      companions,
+      styles: travelStyles,
       itinerary
     });
 

@@ -95,11 +95,20 @@ const YourItinerary: React.FC = () => {
 
             {/* Map Preview Component */}
             <div className="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow border border-outline-variant/30 aspect-square relative group">
-              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600" alt="Map Preview" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
-              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg flex justify-between items-center">
-                <span className="font-label-md text-label-md">Route Preview</span>
-                <button className="material-symbols-outlined text-primary" data-icon="open_in_full">open_in_full</button>
+              <iframe 
+                width="100%" 
+                height="100%" 
+                frameBorder="0" 
+                scrolling="no" 
+                marginHeight={0} 
+                marginWidth={0} 
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(aiData ? aiData.destination : 'Kyoto')}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
+                className="absolute inset-0 w-full h-full grayscale-[20%] contrast-[110%] hue-rotate-15"
+                title="Interactive Map"
+              ></iframe>
+              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg flex justify-between items-center shadow-lg pointer-events-none">
+                <span className="font-label-md text-label-md">Interactive Map</span>
+                <span className="material-symbols-outlined text-[#0b10a4]">map</span>
               </div>
             </div>
           </div>

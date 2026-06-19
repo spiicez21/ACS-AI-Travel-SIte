@@ -49,7 +49,7 @@ const GeneratingJourney: React.FC = () => {
           destination: 'Kyoto, Japan',
           duration: 7,
           budget: '$15000',
-          companions: 'Couple'
+          styles: ['Luxury', 'Culture']
         };
 
         const response = await fetch('http://localhost:5000/api/journeys/generate', {
