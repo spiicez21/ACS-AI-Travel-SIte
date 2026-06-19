@@ -1,9 +1,10 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const BudgetBreakdown: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const aiData = location.state?.itineraryData;
 
   const budgetBreakdown = aiData?.budgetBreakdown || {
@@ -208,7 +209,16 @@ const BudgetBreakdown: React.FC = () => {
           <p className="font-body-md text-white/90 mb-8 max-w-lg">
             Discover the hidden gems. Our AI has already optimized your transport routes between these landmarks.
           </p>
-          <button className="bg-white text-[#0b10a4] px-6 py-3 rounded-full font-label-md text-sm hover:scale-105 transition-transform font-bold">
+          <button 
+            onClick={() => {
+              if (aiData) {
+                navigate('/itinerary', { state: { itineraryData: aiData } });
+              } else {
+                navigate(-1);
+              }
+            }}
+            className="bg-white text-[#0b10a4] px-6 py-3 rounded-full font-label-md text-sm hover:scale-105 transition-transform font-bold"
+          >
             View Detailed Route
           </button>
         </div>

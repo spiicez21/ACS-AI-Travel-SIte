@@ -48,7 +48,17 @@ const YourItinerary: React.FC = () => {
           <h1 className="font-display-xl text-display-xl text-on-surface capitalize">{aiData ? aiData.destination : 'The Kyoto Anthology'}</h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant mt-4">A curated {aiData ? aiData.duration : '7'}-day exploration.</p>
         </div>
-        <button className="flex items-center gap-2 px-6 py-3 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+        <button 
+          onClick={() => navigate('/plan', { 
+            state: { 
+              destination: aiData?.destination,
+              duration: aiData?.duration,
+              budget: aiData?.budget?.toString().replace(/[^0-9]/g, ''),
+              styles: aiData?.styles
+            } 
+          })}
+          className="flex items-center gap-2 px-6 py-3 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors"
+        >
           <span className="material-symbols-outlined" data-icon="tune">tune</span>
           Adjust Plan
         </button>

@@ -6,12 +6,14 @@ import { format } from 'date-fns';
 const PlanYourJourney: React.FC = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state?.destination || '');
-  const [duration, setDuration] = useState('7');
+  const [duration, setDuration] = useState(location.state?.duration?.toString() || '7');
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-  const [budget, setBudget] = useState(15000);
-  const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
+  const [budget, setBudget] = useState(location.state?.budget ? parseInt(location.state.budget) : 15000);
+  const [selectedStyles, setSelectedStyles] = useState<string[]>(
+    location.state?.styles ? location.state.styles.split(', ') : []
+  );
   const [isGenerating, setIsGenerating] = useState(false);
   const navigate = useNavigate();
 

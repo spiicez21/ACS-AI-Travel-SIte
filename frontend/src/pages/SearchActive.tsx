@@ -80,7 +80,7 @@ const SearchActive: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   {/* Kyoto */}
-                  <div className="group cursor-pointer editorial-image-hover">
+                  <div onClick={() => handleQuickSearch('Kyoto')} className="group cursor-pointer editorial-image-hover">
                     <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4 relative">
                       <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" alt="Kyoto" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
@@ -88,7 +88,7 @@ const SearchActive: React.FC = () => {
                     <p className="font-label-sm text-label-sm text-outline">Japan</p>
                   </div>
                   {/* Amalfi */}
-                  <div className="group cursor-pointer editorial-image-hover">
+                  <div onClick={() => handleQuickSearch('Amalfi Coast')} className="group cursor-pointer editorial-image-hover">
                     <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4 relative">
                       <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&q=80&w=800" alt="Amalfi Coast" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
@@ -96,7 +96,7 @@ const SearchActive: React.FC = () => {
                     <p className="font-label-sm text-label-sm text-outline">Italy</p>
                   </div>
                   {/* Lofoten */}
-                  <div className="group cursor-pointer editorial-image-hover">
+                  <div onClick={() => handleQuickSearch('Lofoten')} className="group cursor-pointer editorial-image-hover">
                     <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4 relative">
                       <img src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?auto=format&fit=crop&q=80&w=800" alt="Lofoten" className="absolute inset-0 w-full h-full object-cover" />
                     </div>
@@ -110,7 +110,7 @@ const SearchActive: React.FC = () => {
               <section>
                 <h3 className="font-label-sm text-label-sm text-outline tracking-widest uppercase mb-6">Editorial Collections</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between group cursor-pointer p-4 rounded-xl hover:bg-surface-container-low transition-all">
+                  <div onClick={() => handleQuickSearch('The Nordic Anthology')} className="flex items-center justify-between group cursor-pointer p-4 rounded-xl hover:bg-surface-container-low transition-all">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-primary/10 rounded flex items-center justify-center">
                         <span className="material-symbols-outlined text-primary">auto_stories</span>
@@ -122,7 +122,7 @@ const SearchActive: React.FC = () => {
                     </div>
                     <span className="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
                   </div>
-                  <div className="flex items-center justify-between group cursor-pointer p-4 rounded-xl hover:bg-surface-container-low transition-all">
+                  <div onClick={() => handleQuickSearch('Silent Architectures')} className="flex items-center justify-between group cursor-pointer p-4 rounded-xl hover:bg-surface-container-low transition-all">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-primary/10 rounded flex items-center justify-center">
                         <span className="material-symbols-outlined text-primary">architecture</span>
@@ -141,13 +141,13 @@ const SearchActive: React.FC = () => {
               <section>
                 <h3 className="font-label-sm text-label-sm text-outline tracking-widest uppercase mb-4">Recent Searches</h3>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-surface-container rounded-full font-label-md text-label-md text-primary flex items-center gap-2 cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
+                  <span onClick={() => handleQuickSearch('Atacama Desert')} className="px-4 py-2 bg-surface-container rounded-full font-label-md text-label-md text-primary flex items-center gap-2 cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
                     Atacama Desert <span className="material-symbols-outlined text-[16px]">history</span>
                   </span>
-                  <span className="px-4 py-2 bg-surface-container rounded-full font-label-md text-label-md text-primary flex items-center gap-2 cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
+                  <span onClick={() => handleQuickSearch('Swiss Alps')} className="px-4 py-2 bg-surface-container rounded-full font-label-md text-label-md text-primary flex items-center gap-2 cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
                     Swiss Alps <span className="material-symbols-outlined text-[16px]">history</span>
                   </span>
-                  <span className="px-4 py-2 bg-surface-container rounded-full font-label-md text-label-md text-primary flex items-center gap-2 cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
+                  <span onClick={() => handleQuickSearch('Tokyo Nightlife')} className="px-4 py-2 bg-surface-container rounded-full font-label-md text-label-md text-primary flex items-center gap-2 cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
                     Tokyo Nightlife <span className="material-symbols-outlined text-[16px]">history</span>
                   </span>
                 </div>
@@ -156,7 +156,7 @@ const SearchActive: React.FC = () => {
 
             {/* Footer Action */}
             <div className="bg-surface-container-low p-6 flex justify-center">
-              <button className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+              <button onClick={() => navigate('/plan')} className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
                 Advanced Directional Search <span className="material-symbols-outlined text-[18px]">keyboard_command_key</span>
               </button>
             </div>
