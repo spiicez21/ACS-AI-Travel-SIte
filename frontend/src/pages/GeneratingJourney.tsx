@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const GeneratingJourney: React.FC = () => {
   const [messageIndex, setMessageIndex] = useState(0);
+  const location = useLocation();
   const navigate = useNavigate();
 
   const messages = [
@@ -34,15 +35,6 @@ const GeneratingJourney: React.FC = () => {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
       }
-      .progress-line-animation {
-        animation: progressWidth 5s ease-in-out forwards;
-      }
-      @keyframes progressWidth {
-        0% { width: 0%; }
-        30% { width: 45%; }
-        60% { width: 72%; }
-        100% { width: 95%; }
-      }
     `;
     document.head.appendChild(styleSheet);
 
@@ -51,17 +43,46 @@ const GeneratingJourney: React.FC = () => {
       setMessageIndex((prev) => (prev + 1) % messages.length);
     }, 2500);
 
-    // Navigate to itinerary after some time
-    const navTimeout = setTimeout(() => {
-      navigate('/itinerary');
-    }, 12500); // Wait for all messages
+    const generateTrip = async () => {
+      try {
+        const payload = location.state || {
+          destination: 'Kyoto, Japan',
+          duration: 7,
+          budget: '$15000',
+          companions: 'Couple'
+        };
+
+        const response = await fetch('http://localhost:5000/api/journeys/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to generate journey');
+        }
+
+        const data = await response.json();
+        
+        // Give the user a moment to see the loading state before snapping to the next screen
+        setTimeout(() => {
+          navigate('/itinerary', { state: { itineraryData: data } });
+        }, 1500);
+
+      } catch (error) {
+        console.error('Error generating trip:', error);
+        // Fallback or error handling
+        navigate('/itinerary');
+      }
+    };
+
+    generateTrip();
 
     return () => {
       clearInterval(interval);
-      clearTimeout(navTimeout);
       document.head.removeChild(styleSheet);
     };
-  }, [navigate]);
+  }, [navigate, location.state]);
 
   let statusText = "Finding your direction...";
   if (messageIndex >= 2) statusText = "Almost there...";

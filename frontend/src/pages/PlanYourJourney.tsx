@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DatePickerModal from '../components/DatePickerModal';
+import { format } from 'date-fns';
 
 const PlanYourJourney: React.FC = () => {
+  const [destination, setDestination] = useState('');
+  const [duration, setDuration] = useState('7');
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const [budget, setBudget] = useState(15000);
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -22,8 +29,15 @@ const PlanYourJourney: React.FC = () => {
     setIsGenerating(true);
     setTimeout(() => {
       setIsGenerating(false);
-      navigate('/generating'); // Navigate to the next step
-    }, 2500);
+      navigate('/generating', {
+        state: {
+          destination: destination || 'Kyoto, Japan',
+          duration: parseInt(duration) || 7,
+          budget: `$${budget}`,
+          companions: selectedStyles.length > 0 ? selectedStyles.join(', ') : 'Couple'
+        }
+      });
+    }, 500);
   };
 
   return (
@@ -48,7 +62,7 @@ const PlanYourJourney: React.FC = () => {
                 <label className="block font-label-md text-label-md text-primary uppercase tracking-widest">Where to?</label>
                 <div className="relative">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">travel_explore</span>
-                  <input className="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-4 pl-12 pr-4 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" placeholder="Search any city or region..." type="text" />
+                  <input value={destination} onChange={e => setDestination(e.target.value)} className="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-4 pl-12 pr-4 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" placeholder="Search any city or region..." type="text" required />
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] bg-surface-variant px-2 py-1 rounded text-outline font-bold">AI SEARCH</div>
                 </div>
               </div>
@@ -56,7 +70,21 @@ const PlanYourJourney: React.FC = () => {
                 <label className="block font-label-md text-label-md text-primary uppercase tracking-widest">When?</label>
                 <div className="relative">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">calendar_today</span>
-                  <input className="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-4 pl-12 pr-4 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" placeholder="Select dates" type="text" />
+                  <div 
+                    onClick={() => setIsDatePickerOpen(true)}
+                    className="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-4 pl-12 pr-4 cursor-pointer hover:border-primary font-body-md text-body-md transition-all flex items-center justify-between"
+                  >
+                    <span className={startDate && endDate ? 'text-on-surface' : 'text-outline-variant'}>
+                      {startDate && endDate 
+                        ? `${format(startDate, 'MMM d')} - ${format(endDate, 'MMM d, yyyy')}` 
+                        : 'Select dates'}
+                    </span>
+                    {startDate && endDate && (
+                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded font-semibold">
+                        {duration} Days
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -144,6 +172,17 @@ const PlanYourJourney: React.FC = () => {
           </form>
         </div>
       </div>
+      <DatePickerModal 
+        isOpen={isDatePickerOpen}
+        onClose={() => setIsDatePickerOpen(false)}
+        initialStartDate={startDate}
+        initialEndDate={endDate}
+        onConfirm={(days, start, end) => {
+          setDuration(days.toString());
+          setStartDate(start);
+          setEndDate(end);
+        }}
+      />
     </main>
   );
 };

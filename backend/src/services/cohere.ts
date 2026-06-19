@@ -41,7 +41,7 @@ Format example:
   try {
     const response = await cohere.chat({
       message: prompt,
-      model: 'command-r', // Recommended model for chat and generation
+      model: 'command-r-plus-08-2024', // Recommended model for chat and generation
       temperature: 0.7,
     });
 
