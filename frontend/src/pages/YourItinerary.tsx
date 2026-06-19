@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const YourItinerary: React.FC = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);
   const location = useLocation();
+  const navigate = useNavigate();
   const aiData = location.state?.itineraryData;
 
   useEffect(() => {
@@ -77,7 +78,7 @@ const YourItinerary: React.FC = () => {
                     <span className="font-label-md text-label-md">On Track</span>
                   </div>
                   <button 
-                    onClick={() => window.location.href = '/budget'}
+                    onClick={() => navigate('/budget', { state: { itineraryData: aiData } })}
                     className="mt-4 w-full border border-[#0b10a4] text-[#0b10a4] rounded-lg py-2 font-label-sm text-sm hover:bg-[#0b10a4] hover:text-white transition-colors"
                   >
                     View Budget Breakdown

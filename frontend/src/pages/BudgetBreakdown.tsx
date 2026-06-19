@@ -12,20 +12,24 @@ const BudgetBreakdown: React.FC = () => {
     foodAndExperiences: { total: 2114, items: [{ name: 'Sukiyabashi Jiro Tasting', cost: 450 }, { name: 'Daily Meal Allowance (Est.)', cost: 1200 }, { name: 'teamLab Planets Private Tour', cost: 464 }] }
   };
 
+  const flights = budgetBreakdown.flights || { total: 0, items: [] };
+  const hotels = budgetBreakdown.hotels || { total: 0, items: [] };
+  const foodAndExperiences = budgetBreakdown.foodAndExperiences || { total: 0, items: [] };
+
   const optimizations = aiData?.optimizations || [
     "Switching to the Shinkansen Green Pass saves $120 while providing premium lounge access.",
     "Moving the stay to Tuesday-Thursday reduces the rate by 18%."
   ];
 
-  const totalCalculated = budgetBreakdown.flights.total + budgetBreakdown.hotels.total + budgetBreakdown.foodAndExperiences.total;
+  const totalCalculated = (flights.total || 0) + (hotels.total || 0) + (foodAndExperiences.total || 0);
   
   const chartData = [
-    { name: 'Flights', value: Math.round((budgetBreakdown.flights.total / totalCalculated) * 100) || 45, color: '#0b10a4' }, 
-    { name: 'Hotels', value: Math.round((budgetBreakdown.hotels.total / totalCalculated) * 100) || 30, color: '#1d4ed8' }, 
-    { name: 'Food & Exp', value: Math.round((budgetBreakdown.foodAndExperiences.total / totalCalculated) * 100) || 25, color: '#cbd5e1' }, 
+    { name: 'Flights', value: Math.round(((flights.total || 0) / (totalCalculated || 1)) * 100) || 45, color: '#0b10a4' }, 
+    { name: 'Hotels', value: Math.round(((hotels.total || 0) / (totalCalculated || 1)) * 100) || 30, color: '#1d4ed8' }, 
+    { name: 'Food & Exp', value: Math.round(((foodAndExperiences.total || 0) / (totalCalculated || 1)) * 100) || 25, color: '#cbd5e1' }, 
   ];
 
-  const avgPerDay = Math.round(totalCalculated / (aiData ? parseInt(aiData.duration) : 12));
+  const avgPerDay = Math.round((totalCalculated || 8420) / (aiData ? parseInt(aiData.duration) : 12));
 
   return (
     <main className="pt-32 pb-section-gap px-margin-desktop max-w-container-max mx-auto min-h-screen bg-surface">
@@ -135,10 +139,10 @@ const BudgetBreakdown: React.FC = () => {
                   <span className="material-symbols-outlined text-[#0b10a4] text-lg">flight_takeoff</span>
                   <span className="font-label-sm text-xs font-bold tracking-widest text-on-surface uppercase">FLIGHTS</span>
                 </div>
-                <span className="font-label-sm text-sm font-semibold text-on-surface">${budgetBreakdown.flights.total.toLocaleString()}</span>
+                <span className="font-label-sm text-sm font-semibold text-on-surface">${flights.total.toLocaleString()}</span>
               </div>
               <div className="space-y-4">
-                {budgetBreakdown.flights.items.map((item: any, idx: number) => (
+                {flights.items.map((item: any, idx: number) => (
                   <div key={idx} className="flex items-center justify-between font-body-sm text-sm">
                     <span className="text-on-surface-variant">{item.name}</span>
                     <span className="text-on-surface font-medium">${item.cost.toLocaleString()}</span>
@@ -154,10 +158,10 @@ const BudgetBreakdown: React.FC = () => {
                   <span className="material-symbols-outlined text-[#0b10a4] text-lg">apartment</span>
                   <span className="font-label-sm text-xs font-bold tracking-widest text-on-surface uppercase">HOTELS</span>
                 </div>
-                <span className="font-label-sm text-sm font-semibold text-on-surface">${budgetBreakdown.hotels.total.toLocaleString()}</span>
+                <span className="font-label-sm text-sm font-semibold text-on-surface">${hotels.total.toLocaleString()}</span>
               </div>
               <div className="space-y-4">
-                {budgetBreakdown.hotels.items.map((item: any, idx: number) => (
+                {hotels.items.map((item: any, idx: number) => (
                   <div key={idx} className="flex items-center justify-between font-body-sm text-sm">
                     <span className="text-on-surface-variant">{item.name}</span>
                     <span className="text-on-surface font-medium">${item.cost.toLocaleString()}</span>
@@ -173,10 +177,10 @@ const BudgetBreakdown: React.FC = () => {
                   <span className="material-symbols-outlined text-[#0b10a4] text-lg">restaurant</span>
                   <span className="font-label-sm text-xs font-bold tracking-widest text-on-surface uppercase">FOOD & EXPERIENCES</span>
                 </div>
-                <span className="font-label-sm text-sm font-semibold text-on-surface">${budgetBreakdown.foodAndExperiences.total.toLocaleString()}</span>
+                <span className="font-label-sm text-sm font-semibold text-on-surface">${foodAndExperiences.total.toLocaleString()}</span>
               </div>
               <div className="space-y-4">
-                {budgetBreakdown.foodAndExperiences.items.map((item: any, idx: number) => (
+                {foodAndExperiences.items.map((item: any, idx: number) => (
                   <div key={idx} className="flex items-center justify-between font-body-sm text-sm">
                     <span className="text-on-surface-variant">{item.name}</span>
                     <span className="text-on-surface font-medium">${item.cost.toLocaleString()}</span>
