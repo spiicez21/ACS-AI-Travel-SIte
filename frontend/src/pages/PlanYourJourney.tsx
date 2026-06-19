@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import DatePickerModal from '../components/DatePickerModal';
 import { format } from 'date-fns';
 
 const PlanYourJourney: React.FC = () => {
-  const [destination, setDestination] = useState('');
+  const location = useLocation();
+  const [destination, setDestination] = useState(location.state?.destination || '');
   const [duration, setDuration] = useState('7');
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);

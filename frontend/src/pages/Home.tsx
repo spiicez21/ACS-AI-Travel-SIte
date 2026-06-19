@@ -1,7 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  const [destination, setDestination] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (destination.trim()) {
+      navigate('/plan', { state: { destination } });
+    } else {
+      navigate('/search');
+    }
+  };
+
   return (
     <main>
       {/* Hero Section */}
@@ -21,22 +33,22 @@ const Home: React.FC = () => {
           <h1 className="font-display-xl text-display-xl text-white mb-8 drop-shadow-[1px_4px_8px_rgba(0,0,0,1)]   ">
             Find Your Direction
           </h1>
-          <div className="bg-white/95 backdrop-blur-sm p-2 rounded-2xl editorial-shadow flex flex-col md:flex-row gap-2 max-w-2xl mx-auto">
+          <form onSubmit={handleSearch} className="bg-white/95 backdrop-blur-sm p-2 rounded-2xl editorial-shadow flex flex-col md:flex-row gap-2 max-w-2xl mx-auto">
             <div className="flex-1 flex items-center px-4 py-3 border-b md:border-b-0 md:border-r border-outline-variant">
               <span className="material-symbols-outlined text-outline mr-2">explore</span>
               <input
                 className="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface"
                 placeholder="Where do you want to wander?"
                 type="text"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
               />
             </div>
-            <Link to="/search" className="flex items-stretch">
-              <button className="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-95 transition-all w-full md:w-auto h-full">
-                <span>Ask AI Guide</span>
-                <span className="material-symbols-outlined text-sm">auto_awesome</span>
-              </button>
-            </Link>
-          </div>
+            <button type="submit" className="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-95 transition-all w-full md:w-auto h-full">
+              <span>Ask AI Guide</span>
+              <span className="material-symbols-outlined text-sm">auto_awesome</span>
+            </button>
+          </form>
         </div>
       </section>
 

@@ -1,7 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SearchActive: React.FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [destination, setDestination] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (destination.trim()) {
+      navigate('/plan', { state: { destination } });
+    }
+  };
+
+  const handleQuickSearch = (dest: string) => {
+    navigate('/plan', { state: { destination: dest } });
+  };
 
   useEffect(() => {
     // Add custom CSS for search state
@@ -44,15 +58,18 @@ const SearchActive: React.FC = () => {
         <div className="w-full mb-32 relative z-[60]">
           <div className="bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[24px] overflow-hidden border border-outline-variant/20 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Search Header */}
-            <div className="p-8 border-b border-outline-variant/20 flex items-center gap-4">
+            <form onSubmit={handleSearch} className="p-8 border-b border-outline-variant/20 flex items-center gap-4">
               <span className="material-symbols-outlined text-primary text-3xl">search</span>
               <input
                 ref={searchInputRef}
                 className="bg-transparent border-none p-0 focus:ring-0 w-full font-headline-md text-headline-md text-on-surface placeholder:text-outline-variant outline-none"
                 placeholder="Explore trajectories..."
                 type="text"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
               />
-            </div>
+              <button type="submit" className="hidden">Search</button>
+            </form>
             
             <div className="p-8 space-y-10">
               {/* Trending Trajectories */}

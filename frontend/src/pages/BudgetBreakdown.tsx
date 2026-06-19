@@ -6,12 +6,26 @@ const BudgetBreakdown: React.FC = () => {
   const location = useLocation();
   const aiData = location.state?.itineraryData;
 
-  const chartData = [
-    { name: 'Flights', value: 45, color: '#0b10a4' }, 
-    { name: 'Hotels', value: 30, color: '#1d4ed8' }, 
-    { name: 'Activities', value: 15, color: '#94a3b8' }, 
-    { name: 'Food', value: 10, color: '#cbd5e1' }, 
+  const budgetBreakdown = aiData?.budgetBreakdown || {
+    flights: { total: 3780, items: [{ name: 'LHR → HND (Business Class)', cost: 3450 }, { name: 'HND → ITM (Domestic)', cost: 330 }] },
+    hotels: { total: 2526, items: [{ name: 'Aman Tokyo (4 Nights)', cost: 1280 }, { name: 'The Mitsui Kyoto (3 Nights)', cost: 956 }, { name: 'Traditional Ryokan Hakone', cost: 290 }] },
+    foodAndExperiences: { total: 2114, items: [{ name: 'Sukiyabashi Jiro Tasting', cost: 450 }, { name: 'Daily Meal Allowance (Est.)', cost: 1200 }, { name: 'teamLab Planets Private Tour', cost: 464 }] }
+  };
+
+  const optimizations = aiData?.optimizations || [
+    "Switching to the Shinkansen Green Pass saves $120 while providing premium lounge access.",
+    "Moving the stay to Tuesday-Thursday reduces the rate by 18%."
   ];
+
+  const totalCalculated = budgetBreakdown.flights.total + budgetBreakdown.hotels.total + budgetBreakdown.foodAndExperiences.total;
+  
+  const chartData = [
+    { name: 'Flights', value: Math.round((budgetBreakdown.flights.total / totalCalculated) * 100) || 45, color: '#0b10a4' }, 
+    { name: 'Hotels', value: Math.round((budgetBreakdown.hotels.total / totalCalculated) * 100) || 30, color: '#1d4ed8' }, 
+    { name: 'Food & Exp', value: Math.round((budgetBreakdown.foodAndExperiences.total / totalCalculated) * 100) || 25, color: '#cbd5e1' }, 
+  ];
+
+  const avgPerDay = Math.round(totalCalculated / (aiData ? parseInt(aiData.duration) : 12));
 
   return (
     <main className="pt-32 pb-section-gap px-margin-desktop max-w-container-max mx-auto min-h-screen bg-surface">
@@ -30,7 +44,7 @@ const BudgetBreakdown: React.FC = () => {
           <div className="text-right">
             <span className="font-label-sm text-xs text-outline font-medium block mb-1">Total Estimated Budget</span>
             <span className="font-display-lg text-headline-lg md:text-5xl text-[#0b10a4] font-semibold">
-              {aiData ? aiData.budget : '$8,420.00'}
+              ${totalCalculated.toLocaleString()}
             </span>
           </div>
         </div>
@@ -64,7 +78,7 @@ const BudgetBreakdown: React.FC = () => {
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                 <span className="font-label-sm text-xs text-outline mb-1">Avg/Day</span>
-                <span className="font-display-sm text-3xl text-on-surface">$701</span>
+                <span className="font-display-sm text-3xl text-on-surface">${avgPerDay}</span>
               </div>
             </div>
 
@@ -89,18 +103,14 @@ const BudgetBreakdown: React.FC = () => {
               <span className="material-symbols-outlined text-white/50 text-3xl">auto_awesome</span>
             </div>
             <div className="space-y-6 mb-8 relative z-10">
-              <div className="flex gap-4">
-                <span className="material-symbols-outlined text-white/70 mt-0.5">location_on</span>
-                <p className="font-body-sm text-sm leading-relaxed text-white/90">
-                  Switching to the Shinkansen Green Pass saves $120 while providing premium lounge access.
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <span className="material-symbols-outlined text-white/70 mt-0.5">calendar_today</span>
-                <p className="font-body-sm text-sm leading-relaxed text-white/90">
-                  Moving the stay to Tuesday-Thursday reduces the rate by 18%.
-                </p>
-              </div>
+              {optimizations.map((opt: string, idx: number) => (
+                <div key={idx} className="flex gap-4">
+                  <span className="material-symbols-outlined text-white/70 mt-0.5">location_on</span>
+                  <p className="font-body-sm text-sm leading-relaxed text-white/90">
+                    {opt}
+                  </p>
+                </div>
+              ))}
             </div>
             <button className="w-full py-3 px-6 rounded-xl border border-white/20 text-white font-label-md text-sm hover:bg-white/10 transition-colors relative z-10">
               Apply AI Optimization
@@ -125,17 +135,15 @@ const BudgetBreakdown: React.FC = () => {
                   <span className="material-symbols-outlined text-[#0b10a4] text-lg">flight_takeoff</span>
                   <span className="font-label-sm text-xs font-bold tracking-widest text-on-surface uppercase">FLIGHTS</span>
                 </div>
-                <span className="font-label-sm text-sm font-semibold text-on-surface">$3,780</span>
+                <span className="font-label-sm text-sm font-semibold text-on-surface">${budgetBreakdown.flights.total.toLocaleString()}</span>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">LHR → HND (Business Class)</span>
-                  <span className="text-on-surface font-medium">$3,450</span>
-                </div>
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">HND → ITM (Domestic)</span>
-                  <span className="text-on-surface font-medium">$330</span>
-                </div>
+                {budgetBreakdown.flights.items.map((item: any, idx: number) => (
+                  <div key={idx} className="flex items-center justify-between font-body-sm text-sm">
+                    <span className="text-on-surface-variant">{item.name}</span>
+                    <span className="text-on-surface font-medium">${item.cost.toLocaleString()}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -146,21 +154,15 @@ const BudgetBreakdown: React.FC = () => {
                   <span className="material-symbols-outlined text-[#0b10a4] text-lg">apartment</span>
                   <span className="font-label-sm text-xs font-bold tracking-widest text-on-surface uppercase">HOTELS</span>
                 </div>
-                <span className="font-label-sm text-sm font-semibold text-on-surface">$2,526</span>
+                <span className="font-label-sm text-sm font-semibold text-on-surface">${budgetBreakdown.hotels.total.toLocaleString()}</span>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">Aman Tokyo (4 Nights)</span>
-                  <span className="text-on-surface font-medium">$1,280</span>
-                </div>
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">The Mitsui Kyoto (3 Nights)</span>
-                  <span className="text-on-surface font-medium">$956</span>
-                </div>
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">Traditional Ryokan Hakone</span>
-                  <span className="text-on-surface font-medium">$290</span>
-                </div>
+                {budgetBreakdown.hotels.items.map((item: any, idx: number) => (
+                  <div key={idx} className="flex items-center justify-between font-body-sm text-sm">
+                    <span className="text-on-surface-variant">{item.name}</span>
+                    <span className="text-on-surface font-medium">${item.cost.toLocaleString()}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -171,21 +173,15 @@ const BudgetBreakdown: React.FC = () => {
                   <span className="material-symbols-outlined text-[#0b10a4] text-lg">restaurant</span>
                   <span className="font-label-sm text-xs font-bold tracking-widest text-on-surface uppercase">FOOD & EXPERIENCES</span>
                 </div>
-                <span className="font-label-sm text-sm font-semibold text-on-surface">$2,114</span>
+                <span className="font-label-sm text-sm font-semibold text-on-surface">${budgetBreakdown.foodAndExperiences.total.toLocaleString()}</span>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">Sukiyabashi Jiro Tasting</span>
-                  <span className="text-on-surface font-medium">$450</span>
-                </div>
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">Daily Meal Allowance (Est.)</span>
-                  <span className="text-on-surface font-medium">$1,200</span>
-                </div>
-                <div className="flex items-center justify-between font-body-sm text-sm">
-                  <span className="text-on-surface-variant">teamLab Planets Private Tour</span>
-                  <span className="text-on-surface font-medium">$464</span>
-                </div>
+                {budgetBreakdown.foodAndExperiences.items.map((item: any, idx: number) => (
+                  <div key={idx} className="flex items-center justify-between font-body-sm text-sm">
+                    <span className="text-on-surface-variant">{item.name}</span>
+                    <span className="text-on-surface font-medium">${item.cost.toLocaleString()}</span>
+                  </div>
+                ))}
               </div>
             </div>
 

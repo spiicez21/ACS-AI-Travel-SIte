@@ -14,7 +14,6 @@
 
 @layer base {
   body {
-    @apply bg-surface font-body-md text-on-surface antialiased;
     background-color: #FAFAF7; /* From Style Guidance: Premium paper feel */
   }
 }

@@ -16,12 +16,12 @@ router.post('/generate', async (req, res) => {
     const travelStyles = styles ? styles.join(', ') : 'General Explorer';
 
     // 1. Generate itinerary using Cohere
-    const itinerary = await generateItinerary(destination, duration, budget.toString(), travelStyles);
+    const generatedData = await generateItinerary(destination, duration, budget.toString(), travelStyles);
 
     // 2. Save to Neon database
     const result = await sql`
       INSERT INTO journeys (destination, duration, budget, companions, itinerary_json)
-      VALUES (${destination}, ${duration}, ${budget}, ${travelStyles}, ${JSON.stringify(itinerary)})
+      VALUES (${destination}, ${duration}, ${budget}, ${travelStyles}, ${JSON.stringify(generatedData)})
       RETURNING id
     `;
 
@@ -34,7 +34,7 @@ router.post('/generate', async (req, res) => {
       duration,
       budget,
       styles: travelStyles,
-      itinerary
+      ...generatedData
     });
 
   } catch (error) {

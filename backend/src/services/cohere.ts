@@ -21,21 +21,31 @@ export async function generateItinerary(
 You are an expert luxury travel planner. Create a ${duration}-day itinerary for a trip to ${destination}.
 The budget is ${budget}. The trip is for ${companions}.
 
-Please return the itinerary STRICTLY as a JSON array where each item represents a day. Do not include any markdown formatting like \`\`\`json. Only return the raw JSON array.
+Please return STRICTLY a JSON object containing the itinerary, budgetBreakdown, and optimizations. Do not include any markdown formatting. Only return the raw JSON object.
 Format example:
-[
-  {
-    "day": 1,
-    "theme": "Arrival and Exploration",
-    "activities": [
-      {
-        "time": "Morning",
-        "description": "Arrive at the hotel and settle in.",
-        "location": "Hotel Name"
-      }
-    ]
-  }
-]
+{
+  "itinerary": [
+    {
+      "day": 1,
+      "theme": "Arrival and Exploration",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Arrive at the hotel and settle in.",
+          "location": "Hotel Name"
+        }
+      ]
+    }
+  ],
+  "budgetBreakdown": {
+    "flights": { "total": 1500, "items": [{ "name": "Round trip flights", "cost": 1500 }] },
+    "hotels": { "total": 1200, "items": [{ "name": "Luxury Hotel 3 nights", "cost": 1200 }] },
+    "foodAndExperiences": { "total": 800, "items": [{ "name": "Fine dining", "cost": 800 }] }
+  },
+  "optimizations": [
+    "Booking flights on Tuesday saves 15%."
+  ]
+}
 `;
 
   try {
@@ -47,11 +57,14 @@ Format example:
 
     const text = response.text;
     
-    // Attempt to parse JSON
-    // Sometimes the model wraps it in \`\`\`json ... \`\`\`
-    const cleanText = text.replace(/\`\`\`json/g, '').replace(/\`\`\`/g, '').trim();
-    
-    return JSON.parse(cleanText);
+    // Extract JSON object from the response (in case the model wraps it in markdown)
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      throw new Error('Failed to parse JSON object from Cohere response');
+    }
+
+    const generatedData = JSON.parse(jsonMatch[0]);
+    return generatedData;
   } catch (error) {
     console.error("Cohere AI generation error:", error);
     throw new Error("Failed to generate itinerary");
