@@ -14,6 +14,9 @@ import SearchActive from './pages/SearchActive';
 import NavigationOverlay from './pages/NavigationOverlay';
 import DatePickerActive from './pages/DatePickerActive';
 import ContactUs from './pages/ContactUs';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import TripHistory from './pages/TripHistory';
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
             <Route path="/navigation" element={<NavigationOverlay />} />
             <Route path="/date-picker" element={<DatePickerActive />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/history" element={<TripHistory />} />
             {/* Future routes will be added here */}
           </Routes>
         </div>

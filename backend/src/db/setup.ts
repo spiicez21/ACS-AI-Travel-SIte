@@ -5,8 +5,19 @@ export async function setupDatabase() {
   
   try {
     await sql`
+      CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password_hash VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `;
+    console.log('Database setup: Table "users" is ready.');
+
+    await sql`
       CREATE TABLE IF NOT EXISTS journeys (
         id SERIAL PRIMARY KEY,
+        user_id INTEGER REFERENCES users(id),
         destination VARCHAR(255) NOT NULL,
         duration INTEGER NOT NULL,
         budget VARCHAR(50) NOT NULL,
@@ -15,7 +26,7 @@ export async function setupDatabase() {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `;
-    console.log('Database setup complete. Table "journeys" is ready.');
+    console.log('Database setup: Table "journeys" is ready.');
   } catch (error) {
     console.error('Error setting up the database:', error);
   }

@@ -120,7 +120,7 @@ const NavigationOverlay: React.FC = () => {
                 <a className={`font-label-md text-label-md hover:opacity-70 transition-opacity ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">LinkedIn</a>
                 <a className={`font-label-md text-label-md hover:opacity-70 transition-opacity ${isDarkBg ? 'text-white' : 'text-primary'}`} href="#">Twitter</a>
               </div>
-              <p className={`font-label-sm text-label-sm ${isDarkBg ? 'text-white/70' : 'text-outline'}`}>© 2024 THISAI. Editorial Precision in Travel.</p>
+              <p className={`font-label-sm text-label-sm ${isDarkBg ? 'text-white/70' : 'text-outline'}`}>it is just intern task to make site</p>
             </div>
           </div>
         </div>

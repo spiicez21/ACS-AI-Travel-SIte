@@ -33,18 +33,18 @@ const Home: React.FC = () => {
           <h1 className="font-display-xl text-display-xl text-white mb-8 drop-shadow-[1px_4px_8px_rgba(0,0,0,1)]   ">
             Find Your Direction
           </h1>
-          <form onSubmit={handleSearch} className="bg-white/95 backdrop-blur-sm p-2 rounded-2xl editorial-shadow flex flex-col md:flex-row gap-2 max-w-2xl mx-auto">
-            <div className="flex-1 flex items-center px-4 py-3 border-b md:border-b-0 md:border-r border-outline-variant">
+          <form onSubmit={handleSearch} className="bg-white/95 backdrop-blur-sm p-2 rounded-2xl editorial-shadow flex flex-col md:flex-row items-stretch gap-2 max-w-2xl mx-auto">
+            <div className="flex-1 flex items-center px-4 border-b md:border-b-0 md:border-r border-outline-variant">
               <span className="material-symbols-outlined text-outline mr-2">explore</span>
               <input
-                className="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface"
+                className="bg-transparent border-none focus:ring-0 w-full py-3 font-body-md text-on-surface outline-none"
                 placeholder="Where do you want to wander?"
                 type="text"
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
               />
             </div>
-            <button type="submit" className="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-95 transition-all w-full md:w-auto h-full">
+            <button type="submit" className="bg-primary text-on-primary px-8 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-95 transition-all w-full md:w-auto min-h-[48px] shrink-0">
               <span>Ask AI Guide</span>
               <span className="material-symbols-outlined text-sm">auto_awesome</span>
             </button>

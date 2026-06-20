@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 text-center">
-        <p className="font-label-sm text-label-sm text-outline">© 2024 THISAI. Editorial Precision in Travel.</p>
+        <p className="font-label-sm text-label-sm text-outline">it is just intern.</p>
       </div>
     </footer>
   );

@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { isAuthenticated, logout, user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +31,9 @@ const Navbar: React.FC = () => {
         scrolled ? 'py-4 shadow-sm' : 'py-6'
       }`}
     >
+      {/* Fade out background for better readability */}
+      <div className={`fixed top-0 left-0 w-full h-40 bg-gradient-to-b from-surface via-surface/80 to-transparent pointer-events-none -z-10 transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-50'}`}></div>
+
       <nav className="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto pointer-events-auto">
         <div className="flex items-center bg-surface/80 backdrop-blur-md px-6 py-3 rounded-full border border-outline-variant shadow-sm pointer-events-auto">
           <Link to="/" className="h-8 w-auto flex items-center">
@@ -67,8 +78,27 @@ const Navbar: React.FC = () => {
               search
             </button>
           </Link>
+          
+          {isAuthenticated ? (
+            <>
+              <Link to="/history" className="text-on-surface hover:text-primary transition-colors duration-300 font-label-md text-label-md">
+                History
+              </Link>
+              <button 
+                onClick={handleLogout}
+                className="text-on-surface hover:text-red-400 transition-colors duration-300 font-label-md text-label-md ml-2"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link to="/login" className="text-on-surface hover:text-primary transition-colors duration-300 font-label-md text-label-md">
+              Login
+            </Link>
+          )}
+
           <Link to="/plan">
-            <button className="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-95 shadow-sm">
+            <button className="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-95 shadow-sm ml-2">
               Plan Your Trip
             </button>
           </Link>
