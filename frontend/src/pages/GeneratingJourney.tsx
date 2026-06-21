@@ -94,9 +94,7 @@ const GeneratingJourney: React.FC = () => {
     };
   }, [navigate, location.state]);
 
-  let statusText = "Finding your direction...";
-  if (messageIndex >= 2) statusText = "Almost there...";
-  if (messageIndex === 4) statusText = "Finalizing your journey...";
+
 
   return (
     <main className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-surface">

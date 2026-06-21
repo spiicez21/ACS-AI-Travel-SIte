@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const { isAuthenticated, logout, user } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
