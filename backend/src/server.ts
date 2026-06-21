@@ -14,22 +14,21 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:5173', // Vite default local port
   'http://localhost:3000',
-  process.env.FRONTEND_URL?.replace(/\/$/, '') // Remove trailing slash if present
+  'https://acs-thisai.netlify.app', // Explicitly add the live frontend URL
+  process.env.FRONTEND_URL?.replace(/\/$/, '') // Also keep env var just in case
 ].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    // Remove trailing slash from origin just in case
     const normalizedOrigin = origin.replace(/\/$/, '');
     
     if (allowedOrigins.includes(normalizedOrigin) || !process.env.FRONTEND_URL) {
-      // If origin is in our list, or if FRONTEND_URL isn't set yet
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      console.warn(`CORS blocked request from origin: ${origin}`);
+      callback(null, false); // Don't throw an Error, just pass false so it blocks gracefully
     }
   },
   credentials: true
