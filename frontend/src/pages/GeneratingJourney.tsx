@@ -49,7 +49,7 @@ const GeneratingJourney: React.FC = () => {
         const payload = location.state || {
           destination: 'Kyoto, Japan',
           duration: 7,
-          budget: '$15000',
+          budget: '₹150000',
           styles: ['Luxury', 'Culture']
         };
 

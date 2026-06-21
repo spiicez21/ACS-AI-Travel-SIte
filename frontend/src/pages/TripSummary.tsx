@@ -98,7 +98,7 @@ const TripSummary: React.FC = () => {
                     <p className="font-label-sm text-label-sm text-outline italic">Includes local taxes & concierge fees</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-display-lg text-[40px] text-primary leading-none">$14,250.00</p>
+                    <p className="font-display-lg text-[40px] text-primary leading-none">₹1,42,500.00</p>
                   </div>
                 </div>
                 <div className="flex flex-col space-y-4">

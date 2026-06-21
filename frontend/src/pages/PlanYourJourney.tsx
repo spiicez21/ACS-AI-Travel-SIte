@@ -10,7 +10,7 @@ const PlanYourJourney: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-  const [budget, setBudget] = useState(location.state?.budget ? parseInt(location.state.budget) : 15000);
+  const [budget, setBudget] = useState(location.state?.budget ? parseInt(location.state.budget.replace(/[^0-9]/g, '')) : 150000);
   const [selectedStyles, setSelectedStyles] = useState<string[]>(
     location.state?.styles ? location.state.styles.split(', ') : []
   );
@@ -36,7 +36,7 @@ const PlanYourJourney: React.FC = () => {
         state: {
           destination: destination || 'Kyoto, Japan',
           duration: parseInt(duration) || 7,
-          budget: `$${budget}`,
+          budget: `₹${budget}`,
           companions: selectedStyles.length > 0 ? selectedStyles.join(', ') : 'Couple'
         }
       });
@@ -100,23 +100,23 @@ const PlanYourJourney: React.FC = () => {
                   <p className="text-on-surface-variant text-label-sm">Reflecting your preferred level of luxury</p>
                 </div>
                 <div className="text-right">
-                  <span className="font-display-lg text-headline-lg text-primary" id="budgetValue">${budget.toLocaleString()}</span>
+                  <span className="font-display-lg text-headline-lg text-primary" id="budgetValue">₹{budget.toLocaleString('en-IN')}</span>
                   <span className="block text-label-sm text-outline uppercase">Estimated total</span>
                 </div>
               </div>
               <input
                 className="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary"
                 id="budgetRange"
-                max="50000"
-                min="1000"
-                step="500"
+                max="500000"
+                min="10000"
+                step="5000"
                 type="range"
                 value={budget}
                 onChange={handleBudgetChange}
               />
               <div className="flex justify-between font-label-sm text-outline-variant">
-                <span>$1,000</span>
-                <span>$50,000+</span>
+                <span>₹10,000</span>
+                <span>₹5,00,000+</span>
               </div>
             </div>
 

@@ -36,7 +36,7 @@ const ExploreDestinations: React.FC = () => {
             <div className="flex items-center gap-2">
               <button className="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md text-on-surface-variant">Luxury</button>
               <button className="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md text-on-surface-variant">Adventure</button>
-              <button className="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md text-on-surface-variant">Price: $$</button>
+              <button className="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md text-on-surface-variant">Price: ₹₹</button>
             </div>
           </div>
         </div>
