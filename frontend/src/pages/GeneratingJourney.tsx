@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const GeneratingJourney: React.FC = () => {
   const [messageIndex, setMessageIndex] = useState(0);
@@ -61,7 +62,7 @@ const GeneratingJourney: React.FC = () => {
           headers['Authorization'] = `Bearer ${token}`;
         }
 
-        const response = await fetch('http://localhost:5000/api/journeys/generate', {
+        const response = await fetch(`${API_BASE_URL}/api/journeys/generate`, {
           method: 'POST',
           headers,
           body: JSON.stringify(payload)

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { MapPin, Calendar, Wallet, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 interface Journey {
   id: number;
@@ -26,7 +27,7 @@ const TripHistory: React.FC = () => {
 
     const fetchHistory = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/journeys/history', {
+        const response = await fetch(`${API_BASE_URL}/api/journeys/history`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

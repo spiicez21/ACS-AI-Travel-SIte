@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: acs-travel-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Add other environment variables needed by backend here (e.g., DATABASE_URL, JWT_SECRET, COHERE_API_KEY)
