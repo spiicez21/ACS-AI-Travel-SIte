@@ -26,6 +26,7 @@ const Home: React.FC = () => {
             loop
             muted
             playsInline
+            preload="auto"
           />
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
@@ -88,7 +89,7 @@ const Home: React.FC = () => {
           {/* Card 1 */}
           <Link to="/destination/kyoto" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000" alt="Kyoto, Japan" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000" alt="Kyoto, Japan" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Kyoto, Japan</h3>
@@ -97,7 +98,7 @@ const Home: React.FC = () => {
           {/* Card 2 */}
           <Link to="/destination/venice" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&q=80&w=1000" alt="Venice, Italy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&q=80&w=1000" alt="Venice, Italy" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Venice, Italy</h3>
             <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider">Floating Heritage</p>
@@ -105,7 +106,7 @@ const Home: React.FC = () => {
           {/* Card 3 */}
           <Link to="/destination/agra" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1000" alt="Agra, India" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1000" alt="Agra, India" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Agra, India</h3>
             <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider">Architectural Poetry</p>
@@ -113,7 +114,7 @@ const Home: React.FC = () => {
           {/* Card 4 */}
           <Link to="/destination/yosemite" className="group cursor-pointer">
             <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden mb-6">
-              <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&q=80&w=1000" alt="Yosemite, USA" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&q=80&w=1000" alt="Yosemite, USA" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface">Yosemite, USA</h3>
             <p className="font-label-sm text-label-sm text-outline uppercase tracking-wider">Nature's Cathedral</p>
@@ -123,14 +124,14 @@ const Home: React.FC = () => {
 
       {/* CTA Banner */}
       <section className="max-w-container-max mx-auto px-margin-desktop py-section-gap">
-        <div className="cta-gradient rounded-[40px] p-20 text-center text-white relative overflow-hidden">
+        <div className="cta-gradient rounded-[40px] p-8 md:p-20 text-center text-white relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="font-display-lg text-display-lg mb-6">Your next story begins here.</h2>
-            <p className="font-body-lg text-body-lg mb-12 opacity-90 max-w-xl mx-auto">
+            <h2 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-6">Your next story begins here.</h2>
+            <p className="font-body-lg text-body-md md:text-body-lg mb-8 md:mb-12 opacity-90 max-w-xl mx-auto">
               Join the elite world of travel planned with editorial precision and atmospheric intelligence.
             </p>
             <Link to="/plan">
-              <button className="bg-white text-primary px-12 py-5 rounded-full font-label-md text-label-md font-bold hover:scale-105 transition-all shadow-xl">
+              <button className="bg-white text-primary px-8 md:px-12 py-4 md:py-5 rounded-full font-label-md text-label-md font-bold hover:scale-105 transition-all shadow-xl">
                 Start Your Journey
               </button>
             </Link>

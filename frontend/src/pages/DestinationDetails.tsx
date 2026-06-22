@@ -153,7 +153,7 @@ const DestinationDetails: React.FC = () => {
         </div>
         <div className="md:col-start-7 md:col-span-6">
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden editorial-shadow">
-            <img src={data.editorial.image} alt="Editorial View" className="w-full h-full object-cover" />
+            <img src={data.editorial.image} alt="Editorial View" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -172,27 +172,27 @@ const DestinationDetails: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-gutter h-auto md:h-[800px]">
             <div className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl editorial-shadow">
-              <img src={data.landmarks[0].img} alt={data.landmarks[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={data.landmarks[0].img} alt={data.landmarks[0].title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-on-primary">
                 <h3 className="font-headline-md text-headline-md">{data.landmarks[0].title}</h3>
                 <p className="font-label-md text-label-md opacity-80 mt-2">{data.landmarks[0].desc}</p>
               </div>
             </div>
             <div className="md:col-span-2 group relative overflow-hidden rounded-2xl editorial-shadow">
-              <img src={data.landmarks[1].img} alt={data.landmarks[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={data.landmarks[1].img} alt={data.landmarks[1].title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-on-primary">
                 <h3 className="font-headline-md text-headline-md">{data.landmarks[1].title}</h3>
                 <p className="font-label-md text-label-md opacity-80 mt-2">{data.landmarks[1].desc}</p>
               </div>
             </div>
             <div className="group relative overflow-hidden rounded-2xl editorial-shadow">
-              <img src={data.landmarks[2].img} alt={data.landmarks[2].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={data.landmarks[2].img} alt={data.landmarks[2].title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 text-on-primary">
                 <h4 className="font-label-md text-label-md font-bold">{data.landmarks[2].title}</h4>
               </div>
             </div>
             <div className="group relative overflow-hidden rounded-2xl editorial-shadow">
-              <img src={data.landmarks[3].img} alt={data.landmarks[3].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={data.landmarks[3].img} alt={data.landmarks[3].title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 text-on-primary">
                 <h4 className="font-label-md text-label-md font-bold">{data.landmarks[3].title}</h4>
               </div>
